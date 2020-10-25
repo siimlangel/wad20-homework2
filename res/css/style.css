@@ -1,6 +1,8 @@
 * {
-  font-family: "Roboto Slab", serif;
-  outline: none;
+    font-family: "Roboto Slab", serif;
+    outline: none;
+    font-weight:bold;
+
 }
 
 html,
@@ -163,6 +165,7 @@ nav div.avatar-container {
   background-color: #ffffff;
 }
 
+
 .post {
   width: 80%;
   margin: 15px auto;
@@ -253,12 +256,43 @@ nav div.avatar-container {
   background-color: #01579b;
 }
 
+.subscribe-button.subscribed {
+  background-color: white;
+  color: #8B008B;
+  border: 1px solid #8B008B;
+  box-shadow: 0px 0px 15px -2px #8a8a8a;
+}
+
+.subscribe-button{
+    color: white;
+    background-color: #8B008B;
+    height: 25px;
+    line-height: 10px;
+    border: none;
+}
+
+
+.main-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 50%;
+    margin: auto auto;
+    padding: 90px 15px 15px 15px;
+    background-color: #ffffff;
+    min-height: 100%;
+
+}
+
+
 .profile {
-  width: 80%;
+  height: 55%;
+  width: 47%;
   margin: 15px auto;
   box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
   border-radius: 5px;
 }
+
 
 .profile .profile-author {
   padding: 10px;
@@ -271,28 +305,34 @@ nav div.avatar-container {
 }
 
 .profile .profile-author .profile-author-info {
-  float: left;
   position: relative;
-  width: 50%;
 }
+
 
 .profile .profile-author .profile-author-info img {
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  object-fit: cover;
-  object-position: top;
-  margin: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: relative;
 }
 
-.profile.profile-author .profile-author-info small {
-  position: absolute;
-  top: 10px;
-  left: 35px;
+#nimi{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-.profile .profile-author .profile-author-info + small {
-  float: right;
-  color: grey;
-  padding: 10px;
+.subscribe-actions{
+    display: flex;
+    justify-content: center;
 }
+
+
+
+
+
