@@ -1,19 +1,26 @@
 let profiles = [];
 
-$(function () {
+$(document).ready(function (){
   loadProfiles().then(function (response) {
     for (let profile of response) {
-      const authorName = profile.author.firstname + " " + profile.author.lastname;
+      const authorName = profile.firstname + " " + profile.lastname;
 
       profiles.push(
         new Profile(
           authorName,
-          profile.author.avatar,
+          profile.avatar,
         )
       );
     }
     displayProfiles(profiles);
+
+  $(".subscribe-button").click(function () {
+    $(this).toggleClass("subscribed");
+    $(this).text(function(i, text){
+          return text === "Follow" ? "Followed" : "Follow";
   });
+});
+});
 });
 
 function displayProfiles(profiles) {
@@ -21,17 +28,27 @@ function displayProfiles(profiles) {
     let profileDiv    = $("<div />").addClass("profile");
     //Post author information
     let authorDiv  = $("<div />").addClass("profile-author");
-    let authorSpan = $("<span />").addClass("profile-author-info");
+    let authorDiv2 = $("<div />").addClass("profile-author-info");
 
-    authorSpan.append(`<img id="image" src=${profile.avatar}>`);
-    authorSpan.append(`<small>${profile.author}</small>`);
+    authorDiv2.append(`<img id="image" src=${profile.avatar}>`);
+    authorDiv2.append(`<p id="nimi">${profile.author}</p>`);
+
+     let postActionsDiv = $("<div />").addClass("subscribe-actions");
+    postActionsDiv.append(
+     `<button id="subscribe" type="subscribe-button" name="subscribe" class="subscribe-button">${"Follow"}</button>`
+    );
+
     //Adding to the authorDiv in the right order.
-    authorDiv.append(authorSpan);
+    authorDiv.append(authorDiv2);
     profileDiv.append(authorDiv);
+    profileDiv.append(postActionsDiv);
 
-    $("section.main-container").append(profileDiv);
+    $("section.main-container2").append(profileDiv);
   }
 }
+
+
+
 
 function loadProfiles() {
   return $.get({
