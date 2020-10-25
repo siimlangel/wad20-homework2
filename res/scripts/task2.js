@@ -1,6 +1,6 @@
 let posts = [];
 
-$(function () {
+$(document).ready(function () {
   loadPosts().then(function (response) {
     for (let post of response) {
       const authorName = post.author.firstname + " " + post.author.lastname;
@@ -71,6 +71,10 @@ function displayPosts(posts) {
 
     $("section.main-container").append(postDiv);
   }
+
+  $(".like-button").click(function () {
+    $(this).toggleClass("liked");
+  });
 }
 
 function loadPosts() {

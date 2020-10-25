@@ -112,6 +112,47 @@ nav div.search-container > button {
 nav div.avatar-container {
   margin-right: 15px;
   text-align: right;
+  position: relative;
+}
+
+.dropdown-container {
+  position: absolute;
+  background-color: white;
+  z-index: -1;
+  display: none;
+  height: 300%;
+}
+.dropdown-container.open {
+  padding: 0;
+  /* need to consider parent's margin right */
+  right: -15px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation-name: avatar-dropdown;
+  animation-duration: 250ms;
+}
+
+.dropdown-container.open > div {
+  width: 100%;
+  height: 30%;
+  text-align: left;
+  border-bottom: solid black 1px;
+}
+
+.dropdown-container.open > div > p {
+  margin: 0;
+}
+
+@keyframes avatar-dropdown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(height);
+  }
 }
 
 .main-container {
@@ -208,6 +249,50 @@ nav div.avatar-container {
   border: none;
 }
 
-.like-button .liked {
+.like-button.liked {
   background-color: #01579b;
+}
+
+.profile {
+  width: 80%;
+  margin: 15px auto;
+  box-shadow: 0 0 15px rgba(38, 50, 56, 0.33);
+  border-radius: 5px;
+}
+
+.profile .profile-author {
+  padding: 10px;
+}
+
+.profile .profile-author::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.profile .profile-author .profile-author-info {
+  float: left;
+  position: relative;
+  width: 50%;
+}
+
+.profile .profile-author .profile-author-info img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: top;
+  margin: 5px;
+}
+
+.profile.profile-author .profile-author-info small {
+  position: absolute;
+  top: 10px;
+  left: 35px;
+}
+
+.profile .profile-author .profile-author-info + small {
+  float: right;
+  color: grey;
+  padding: 10px;
 }

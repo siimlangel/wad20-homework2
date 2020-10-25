@@ -8,8 +8,9 @@
     />
     <link rel="stylesheet" href="res/css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="res/scripts/post.js"></script>
-    <script src="res/scripts/task2.js"></script>
+    <script src="res/scripts/post.js" async></script>
+    <script src="res/scripts/task1.js" async></script>
+    <script src="res/scripts/task2.js" async></script>
     <title>postIt! Just Post It</title>
   </head>
   <body>
@@ -24,7 +25,22 @@
           </button>
         </div>
         <div class="avatar-container">
-          <img src="res/images/avatar.png" class="avatar" alt="Me" />
+          <img src="res/images/avatar.png" class="avatar" alt="Me">
+          <div class="dropdown-container">
+            <div>
+              <p id="user-username">name</p>
+              <p id="user-email">email</p>
+            </div>
+            <div>
+              <a href="browse.html">Browse</a>
+
+            </div>
+            <div>
+
+              <a href="login.html">Log Out</a>
+
+            </div>
+          </div>
         </div>
       </nav>
     </header>
