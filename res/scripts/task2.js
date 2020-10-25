@@ -21,6 +21,9 @@ $(document).ready(function () {
       );
     }
     displayPosts(posts);
+    $(".like-button").click(function () {
+      $(this).toggleClass("liked");
+    });
   });
 });
 
@@ -71,10 +74,6 @@ function displayPosts(posts) {
 
     $("section.main-container").append(postDiv);
   }
-
-  $(".like-button").click(function () {
-    $(this).toggleClass("liked");
-  });
 }
 
 function loadPosts() {
