@@ -26,10 +26,10 @@ $(function () {
 
 function displayPosts(posts) {
   for (let post of posts) {
-    let postDiv    = $("<div />").addClass("post");
+    let postDiv = $("<div />").addClass("post");
 
     //Post author information
-    let authorDiv  = $("<div />").addClass("post-author");
+    let authorDiv = $("<div />").addClass("post-author");
     let authorSpan = $("<span />").addClass("post-author-info");
 
     authorSpan.append(`<img id="image" src=${post.avatar}>`);
@@ -62,7 +62,7 @@ function displayPosts(posts) {
     postActionsDiv.append(
       `<button type="button" name="like" class="like-button">${post.likes}</button>`
     );
-    
+
     //Adding all the created divs to the main postDiv.
     postDiv.append(authorDiv);
     postDiv.append(postImageDiv);
